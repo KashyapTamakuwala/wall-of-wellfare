@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DONATION TABLE</title>
+	<meta charset="UTF-8">
+	{% load static %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'tab/favicon.ico' % }"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'tab/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'tab/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'tab/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'tab/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'tab/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'tab/css/util.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'tab/css/main.css'%}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">NAME OF DONAR</th>
+									<th class="cell100 column1">Type OF DONATIONS</th>
+									<th class="cell100 column1">DATE</th>
+									<th class="cell100 column1">ACCEPT</th>
+									<th class="cell100 column1">DECLINE</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								{% for x in d %}
+								<tr class="row100 body">
+									<td class="cell100 column1">{{x.dname}}</td>
+									<td class="cell100 column1">{{x.dtype}}</td>
+									<td class="cell100 column1">{{x.date}}</td>
+									<td class="cell100 column1"><form action="/ngo/accept/" method="POST">
+											{% csrf_token %}
+										<input type="hidden" value="{{x.id}}" name="id">
+										<input type="submit" value="ACCEPT" name="ACCEPT" >
+									    </form>
+									</td>
+									<td class="cell100 column1"><form action="/ngo/decline/" method="POST">
+										{% csrf_token %}
+									<input type="hidden" value="{{x.id}}" name="id">
+									<input type="submit" value="DECLINE" name="DECLINE" >
+									</form>
+								</td>
+								</tr>							
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="{% static 'assets/vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'assets/vendor/bootstrap/js/popper.js'%}"></script>
+	<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'assets/vendor/select2/select2.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'tab/js/main.js'%}"></script>
+
+</body>
+</html>

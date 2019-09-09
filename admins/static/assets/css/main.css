@@ -1,0 +1,146 @@
+@import url(font-awesome.min.css);
+@import url("http://fonts.googleapis.com/css?family=Raleway:300,700");
+
+
+	*, *:before, *:after {
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+/* Type */
+
+	body {
+		background-color: #fff;
+		color: #444;
+	}
+
+	body {
+		font-family: "Raleway", Arial, Helvetica, sans-serif;
+		font-size: 14pt;
+		font-weight: 300;
+		letter-spacing: 0.09em;
+		line-height: 1.65em;
+	}
+	a {
+		text-decoration: underline;
+		color: #00cdcf;
+	}
+
+	a:hover {
+		text-decoration: blink;
+	}
+
+	strong, b {
+		font-weight: 700;
+		color: #555;
+	}
+
+	p {
+		margin: 0 0 2em 0;
+	}
+
+	h2, h3 {
+		font-weight: 300;
+		line-height: 1em;
+		margin: 0 0 1em 0;
+		text-transform: uppercase;
+		color: #555;
+	}
+
+	h2 {
+		font-size: 1.6em;
+		line-height: 1.5em;
+	}
+
+	h3 {
+		font-size: 1.2em;
+		line-height: 1.5em;
+	}
+
+
+	hr {
+		border: 0;
+		border-bottom: solid 1px;
+		margin: 2em 0;
+	}
+/* Feature */
+
+	.features {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
+		justify-content: center;
+		margin-bottom: 2em;
+	}
+
+	.feature {
+		padding: 2em 2em 0.1em 2em;
+		border-style: solid;
+		border-width: 1px;
+		margin-left: -1px;
+		margin-top: -1px;
+		width: 33.33333%;
+	}
+
+	.feature {
+		border-color: #e3e3e3;
+	}
+
+/* Wrapper */
+
+	.wrapper {
+		padding: 6em 0 4em 0;
+		position: relative;
+	}
+
+		.wrapper > .inner {
+			margin: 0 auto;
+			width: 65em;
+		}
+
+
+/* Banner */
+
+	#banner {
+		background-color: #244c66;
+		color: #ffffff;
+		opacity: .8;
+		padding: 8em 0 6em 0;
+		text-align: center;
+	}
+
+		#banner strong, #banner b {
+			color: #ffffff;
+		}
+
+		#banner h2, #banner h3 {
+			color: #ffffff;
+		}
+
+		#banner hr {
+			border-bottom-color: rgba(255, 255, 255, 0.25);
+		}
+
+		#banner h2 {
+			border-style: double solid;
+			border-width: 4px 1px;
+			font-size: 2.4em;
+			line-height: 1.35em;
+			margin: 0 auto 1em;
+			padding: 1.1em;
+			position: relative;
+			width: 40%;
+		}
+
+		#banner p {
+			font-size: 1.5em;
+			text-transform: uppercase;
+		}

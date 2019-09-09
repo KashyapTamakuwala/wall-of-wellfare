@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Admin Side</title>
+		<meta charset="utf-8" />
+		{%load static%}
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+		
+	</head>
+	<body>
+			<section id="banner">
+				<h2><strong>Wall Of Walfare</strong></h2>
+                    <hr><hr>
+				<p>WELCOME ADMIN </p>
+                    <hr><hr>
+			</section>
+
+			<section class="wrapper">
+				<div class="inner">
+					<header>
+						<h2><strong><center>View Reports</center></strong></h2>
+					</header>
+					<div class="features">
+						<div class="feature">
+							<h3><center>View Donation Database</center></h3>
+							<p><center>click here to see Donation database </center></p><center><a href="/admins/donations/">Click here</a></center>
+						</div>
+						<div class="feature">
+							<h3><center>view pending Requests</center></h3>
+							<p><center>click here to see Pending Requests database </center></p><center><a href="/admins/pending/">Click here</a></center>
+						</div>
+						<div class="feature">
+							<h3>view solved requests</h3>
+                                   <p><center>click here to see Solved    Requests database </center></p><center><a href="/admins/solved/">Click here</a></center>
+						</div>
+						
+						<div class="feature">
+							<center><h3>view donar</h3></center>
+                                   <p><center>click here to see donar     database </center></p><center><a href="/admins/donar/">Click here</a></center>
+						</div>
+						<div class="feature">
+							<center><h3>view NGO</h3></center>
+                                   <p><center>click here to see NGO     database </center></p><center><a href="/admins/ngo/">Click here</a></center>
+						</div>
+					</div>
+				</div>
+			</section>
+	</body>
+</html>

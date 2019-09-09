@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+
+</head>
+<body>
+	
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178" action="/wallofwellfare/rdata" method="POST" >
+						{% csrf_token %}
+					<span class="login100-form-title">
+						Sign Up
+					</span>
+
+					{%if msg%}
+					<div class="wrap-input100 m-b-16">
+							<h4>{{msg}}</h4>
+					</div>
+					{%endif%}
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
+						<input class="input100" type="text" name="username" placeholder="Username" required="">
+						<span class="focus-input100"></span>
+					</div>
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter First name">
+							<input class="input100" type="text" name="fname" placeholder="First name" required="">
+							<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Last name">
+							<input class="input100" type="text" name="lname" placeholder="Last name" required="">
+							<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter password">
+						<input class="input100" type="txt" name="contact" placeholder="Contact_Number" pattern="[0-9]{10}" required="">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
+					<input class="input100" type="email" name="email" placeholder="Email-ID" required="">
+					<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password" pattern=".{4,}" required="">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class=" wrap-input100 m-b-16">
+						<center>Donar :<input class="m-t-20  m-r-50" type="radio" name="type" value="Donar">
+						NGO :<input type="radio" name="type" class="m-b-20" value="ngo"></center>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter Address">
+							<input class="input100" type="text" name="add" placeholder="Address" required="">
+							<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter state">
+							<input class="input100" type="text" name="state" placeholder="state" required="">
+							<span class="focus-input100"></span>
+					</div>
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter city">
+							<input class="input100" type="text" name="city" placeholder="City" required="">
+							<span class="focus-input100"></span>
+					</div>
+					<div class="container-login100-form-btn m-b-16">
+						<button class="login100-form-btn">
+							Register
+						</button>
+					</div>
+
+					
+				</form>
+			</div>
+		</div>
+	<script src="{% static 'main.js' %}"></script>
+
+</body>
+</html>

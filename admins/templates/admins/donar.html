@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DONAR TABLE</title>
+	<meta charset="UTF-8">
+    {% load static %}
+    {% load custom_tags %}
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'assets/favicon.ico'%}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css1/util.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css1/main.css'%}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column2">USERNAME</th>
+									<th class="cell100 column2">FIRST NAME</th>
+                                    <th class="cell100 column2">LAST NAME</th>
+                                    <th class="cell100 column1">EMAIL-ID</th>
+                                    <th class="cell100 column2">CONTACT</th>
+                                    <th class="cell100 column2">ADDRESS</th>
+                                    <th class="cell100 column2">CITY</th>
+                                    <th class="cell100 column2">STATE</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody><br>
+								{% for x in x %}
+								
+								<tr class="row100 body">
+									<td class="cell100 column2">{{x.username}}</td>
+									<td class="cell100 column2">{{x.first_name}}</td>
+                                    <td class="cell100 column2">{{x.last_name}}</td>
+                                    <td class="cell100 column1">{{x.email}}</td>
+                                    <td class="cell100 column2">{% get_co x.id %}</td>
+						 
+							
+							
+									<td class="cell100 column2">{% get_add x.id %}</td>
+                                    <td class="cell100 column2">{% get_ci x.id %}</td>
+                                    <td class="cell100 column2">{% get_st x.id %}</td>
+								</tr>							
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="{% static 'assets/vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'assets/vendor/bootstrap/js/popper.js'%}"></script>
+	<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'assets/vendor/select2/select2.min.js'%}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>
